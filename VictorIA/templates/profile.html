@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mt-5">¡Hola {{ current_user.nombre_usuario }}!</h1>
+  </div>
+  <div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Agentes disponibles</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
+      {% for agent in agents_allowed %}
+        <div class="feature col">
+          <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+            <i class="bi bi-clouds"></i>
+          </div>
+          <h3 class="fs-2 text-body-emphasis">{{ agent.nombre_agente }}</h3>
+          <p>{{ agent.configuracion }}</p>
+          {% if agent.nombre_agente == 'Agente Azure' %}
+            <a href="{{ url_for('agente_azure_bp.agent_azure') }}" class="icon-link">
+          {% elif agent.nombre_agente == 'Agente Licitaciones' %}
+            <a href="{{ url_for('agente_licitaciones_bp.agent_licitaciones') }}" class="icon-link">
+          {% else %}
+            <a href="{{ url_for('agente_test_bp.agent_test') }}" class="icon-link">
+          {% endif %}
+              Consultar
+              <i class="bi bi-arrow-right-circle"></i>
+            </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+

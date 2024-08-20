@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 mt-5 text-center">Plataforma de Agentes impulsados por IA</h1>
+    <p class="lead text-center">&#129302; Este portal te permite consultar diversos agentes expertos en áreas/procesos específicos de Impresistem.</p>
+    <br>
+  </div>
+  <div class="container col-xxl-8 px-4">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{{ url_for('static', filename='images/inicio.jpg') }}" class="rounded d-block mx-lg-auto img-fluid" alt="inicio" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Automatización, análisis y mejora continua</h1>
+        <p class="lead">La inteligencia artificial y los modelos de lenguaje de gran escala (LLM, por sus siglas en inglés) están revolucionando la forma en que las empresas optimizan sus procesos y mejoran la experiencia de sus clientes.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a class="btn btn-primary btn-lg px-4 me-md-2" href="https://www.impresistem.com/es/" target="_blank">Impresistem</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
